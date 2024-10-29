@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Adjust to make form and image symmetrical */
+    gap: 20px;
+    align-items: center;
+    padding: 50px;
+    /* Increased padding for space */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Adjusting the text section to be close to the form */
+.form-text {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.form-text h1 {
+    color: #FDBD03;
+    font: normal normal 900 66px/150px Heebo;
+
+}
+
+.form-text p {
+    font: normal normal normal 1.9vw/1.5em Heebo;
+    /* שימוש ביחידות vw */
+    color: #333;
+    direction: rtl;
+    text-align: right;
+
+
+}
+
+
+form {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 45vw;
+    direction: rtl;
+    font: normal normal bold 16px/24px Heebo;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border: none;
+    /* Remove all borders */
+    border-bottom: 3px solid #FFCC00;
+    background-color: #e4f0ff;
+    width: 100%;
+    font-size: 16px;
+    color: #000;
+
+}
+
+button {
+    padding: 10px;
+    font: normal normal bold 22px/30px Heebo;
+    margin-top: 20px;
+    width: 150px;
+    background-color: #FFCC00;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #011560;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+.image {
+    width: 430px;
+    grid-column: 2 / 3;
+    /* Places the image in the second column */
+    grid-row: 1/ span 2;
+    /* Makes the image span across both rows */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: calc(15px);
+
+
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    /* Scales the image within the container */
+    height: auto;
+    margin-left: 250px;
+}
+
+.backgroundtop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 15px;
+    width: 434px;
+    background: #FDBD03 0% 0% no-repeat padding-box;
+}
+
+.backgroundbuttom {
+    bottom: 0;
+    left: 0;
+    width: 750px;
+    height: 15px;
+    position: fixed;
+    background: #FDBD03 0% 0% no-repeat padding-box;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    top: 65px;
+    left: 65px;
+    /* Adjust this value to move it to the left */
+    width: 70px;
+    height: 70px;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-icon img {
+    width: 35px;
+    /* Adjust the icon size */
+    height: 35px;
+}
+
+.facebook-icon {
+    position: fixed;
+    bottom: 45px;
+    left: 65px;
+    /* Adjust this value to move it to the left */
+    width: 60px;
+    height: 60px;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook-icon img {
+    width: 25px;
+    /* Adjust the icon size */
+    height: 25px;
+}
+
+.instagram-icon {
+    position: fixed;
+    bottom: 45px;
+    left: 150px;
+    /* Adjust this value to move it to the left */
+    width: 60px;
+    height: 60px;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-icon img {
+    width: 25px;
+    /* Adjust the icon size */
+    height: 25px;
+}
+
+.in-icon {
+    position: fixed;
+    bottom: 45px;
+    left: 235px;
+    /* Adjust this value to move it to the left */
+    width: 60px;
+    height: 60px;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.in-icon img {
+    width: 25px;
+    /* Adjust the icon size */
+    height: 25px;
+}
+
+.phone-icon {
+    position: fixed;
+    bottom: 45px;
+    left: 320px;
+    /* Adjust this value to move it to the left */
+    width: 60px;
+    height: 60px;
+    background-color: #FDBD03;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-icon img {
+    width: 25px;
+    /* Adjust the icon size */
+    height: 25px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .iconcontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        /* רווחים בין האייקונים */
+        overflow: visible;
+        /* מוודא שלא ייחתכו */
+        width: 100%;
+        /* מגדיר רוחב לפי המסך */
+        margin-bottom: 35px;
+    }
+
+    .iconcontainer>div img {
+        width: 40px;
+        /* ניתן להתאים את הגודל */
+        height: 40px;
+    }
+
+    .facebook-icon,
+    .phone-icon,
+    .instagram-icon,
+    .in-icon {
+        position: static;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        /* גודל יחסי לרוחב המסך */
+        margin: 20px auto;
+        /* מרכז */
+        margin-right: 270px;
+        /* הזזה קלה שמאלה */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        order: -1;
+        /* מציב את התמונה בראש */
+    }
+
+    .form-text {
+        text-align: center;
+    }
+
+    .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
+
+    form {
+        flex-direction: column;
+        /* Stacks the form fields vertically */
+        gap: 15px;
+        /* Adds space between each field */
+        text-align: center;
+        width: 90%;
+        max-width: 450px;
+        /* Limits form width on mobile */
+        margin-bottom: 120px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        max-height: 150px;
+    }
+
+
+    .form-text>h1 {
+        font: normal normal 900 50px/80px Heebo;
+        text-align: center;
+    }
+
+    .form-text>p {
+        font: normal normal normal 25px/35px Heebo;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+
+    .whatsapp-icon {
+        opacity: 0;
+    }
+
+    .backgroundbuttom {
+        height: 8px;
+    }
+
+    .backgroundtop {
+        height: 8px;
+    }
+
+
+}

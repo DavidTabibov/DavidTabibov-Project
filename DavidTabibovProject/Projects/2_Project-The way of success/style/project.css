@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-img,
+.containerMobile-img {
+    width: 100vw;
+    height: 50vh;
+    /* תופס חצי מגובה הדפדפן */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container-img img,
+.containerMobile-img img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+}
+
+/* תצוגה במסכים רגילים */
+.container-img {
+    opacity: 1;
+}
+
+.containerMobile-img {
+    opacity: 0;
+}
+
+.form-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50vh;
+    /* מתחיל אחרי חצי המסך */
+}
+
+.form-container {
+    background-color: rgba(26, 26, 26, 0.83);
+    color: #fff;
+    padding: 70px 70px 140px 100px;
+    margin-top: auto;
+    width: auto;
+    max-width: 38vw;
+    max-height: 120vh;
+    height: auto;
+    top: 60px;
+    left: 800px;
+    right: 5px;
+    position: absolute;
+    direction: rtl;
+    border-radius: 5px;
+    z-index: 1;
+    transform: scale(0.80);
+}
+
+.form-container h2 {
+    font-size: 1.9em;
+    margin-bottom: 30px;
+    text-align: right;
+    font: normal normal 900 36px/53px Heebo;
+}
+
+.form-container p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+    font: normal normal normal 20px/29px Heebo;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font: normal normal bold 16px/24px Heebo;
+}
+
+form label {
+    margin-bottom: 2px;
+    font-size: 1em;
+
+}
+
+form input {
+    padding: 16px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid #D31C75;
+
+}
+
+form button {
+    padding: 12px;
+    background: #f43b86;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s ease-in-out;
+    width: 150px;
+    font: normal normal bold 22px/30px Heebo;
+}
+
+form button:hover {
+    background: #cbcbcb;
+    transition: background 0.4s ease-in-out;
+}
+
+@media (max-width:1200px) {
+
+    .container-img {
+        opacity: 0;
+    }
+
+    .containerMobile-img {
+        opacity: 1;
+        width: 100vw;
+        height: 25vh;
+        /* תופס 25% מגובה המסך במובייל */
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .containerMobile-img>img {
+        width: 100vw;
+        /* מרחיב את התמונה לרוחב הדפדפן */
+        height: auto;
+        /* שומר על הגובה הפרופורציונלי */
+        max-height: 100vh;
+        /* מוודא שהתמונה לא תחרוג מגובה המסך */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        object-fit: contain;
+        /* מבטיח שהתמונה תישאר בפרופורציה המקורית שלה */
+    }
+
+    .form-container {
+        padding: 65px 70px 75px;
+        margin-top: auto;
+        width: auto;
+        max-width: 200vw;
+        height: auto;
+        top: 75px;
+        left: 10px;
+        right: 5px;
+        position: absolute;
+        direction: rtl;
+        box-shadow: 0px 5px 2px rgba(165, 95, 95, 0.2);
+        border-radius: 5px;
+        z-index: 1;
+        transform: scale(0.85);
+        /* מקטין את ה-div כולו ב-5% */
+    }
+
+
+    .form-container h2 {
+        font-size: 2.6em;
+        text-align: center;
+    }
+
+    .form-container p {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    form label {
+        padding: 15px;
+        font-size: 15pt;
+    }
+
+    form input {
+        padding: 12px;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 1.5em;
+    }
+
+
+}
+
+/* התאמות למסכים קטנים */
+@media (max-width: 768px) {
+    .container-img {
+        opacity: 0;
+    }
+
+    .containerMobile-img {
+        opacity: 1;
+        width: 100vw;
+        height: 25vh;
+        /* תופס 25% מגובה המסך במובייל */
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .containerMobile-img>img {
+        width: 100vw;
+        /* מרחיב את התמונה לרוחב הדפדפן */
+        height: auto;
+        /* שומר על הגובה הפרופורציונלי */
+        max-height: 100vh;
+        /* מוודא שהתמונה לא תחרוג מגובה המסך */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        object-fit: contain;
+        /* מבטיח שהתמונה תישאר בפרופורציה המקורית שלה */
+    }
+
+    .form-container {
+        padding: 65px 70px 75px;
+        margin-top: auto;
+        width: auto;
+        max-width: 200vw;
+        height: auto;
+        top: 75px;
+        left: 10px;
+        right: 5px;
+        position: absolute;
+        direction: rtl;
+        box-shadow: 0px 5px 2px rgba(165, 95, 95, 0.2);
+        border-radius: 5px;
+        z-index: 1;
+        transform: scale(0.85);
+        /* מקטין את ה-div כולו ב-5% */
+    }
+
+
+    .form-container h2 {
+        font-size: 2.6em;
+        text-align: center;
+    }
+
+    .form-container p {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    form label {
+        padding: 15px;
+        font-size: 15pt;
+    }
+
+    form input {
+        padding: 12px;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 1.5em;
+    }
+
+}

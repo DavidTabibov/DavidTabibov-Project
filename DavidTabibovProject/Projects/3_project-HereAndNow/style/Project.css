@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #281EFF, #2DFF8C);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    /* תיקון ל־auto */
+    max-width: auto;
+    /* רוחב מקסימלי */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.form .container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* רווח בין השדות לכפתור */
+    min-width: auto;
+}
+
+h1 {
+    text-align-last: center;
+    color: white;
+    font: normal normal normal 160px/231px Satisfy;
+}
+
+h2 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+    font: normal normal normal 32px/38px Varela Round;
+}
+
+p {
+    color: white;
+    margin-bottom: 30px;
+    font: normal normal normal 16px/20px Varela Round;
+    font-size: 12px;
+    line-height: 2;
+    direction: rtl;
+}
+
+form {
+    margin-bottom: 1px;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    display: inline-flex;
+    /* מוודא שהכפתור וההשדות מיושרים */
+    align-items: flex-end;
+    width: auto;
+}
+
+.form-fields {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* וודא שכל אלמנט מתחיל למעלה */
+    width: auto;
+}
+
+.field {
+    flex-direction: row;
+    text-align: right;
+    padding: 0px 0px 0px 30px;
+}
+
+
+input[type="text"],
+input[type="email"] {
+    padding: 10px 15px;
+    font-size: 16px;
+    font: normal normal normal 16px/20px Varela Round;
+    background: #F6F6F624 0% 0% no-repeat padding-box;
+    border: 2px solid #FFFFFF;
+    /* מבטיח שה-padding לא יוסיף לגובה */
+    color: white;
+    text-align: right;
+    box-sizing: border-box;
+    width: 350px;
+    /* הרחבת השדה */
+}
+
+
+button {
+    padding: 13px 60px;
+    /* מתאים את ה-padding לכפתור */
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font: normal normal normal 16px/20px Varela Round;
+    display: flex;
+}
+
+
+label {
+    display: block;
+    /* ודא שהלייבל נשאר במקום קבוע */
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: white;
+    text-align: right;
+}
+
+.field:nth-child(1) {
+    order: 2;
+    /* משנה את הסדר של השדה הראשון */
+}
+
+
+.field:nth-child(2) {
+    order: 1;
+    /* משנה את הסדר של השדה השני */
+}
+
+
+button:hover {
+    background-color: #2DFF8C;
+    color: white;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .container {
+        max-width: auto;
+        /* הגבלת רוחב הקונטיינר למסך המובייל */
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font: normal normal normal 66px/86px Satisfy;
+        /* גודל כותרת מתאים למובייל */
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-shadow: 0px 0px 36px #00000087;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    h2 {
+        margin-bottom: 35px;
+        text-align: center;
+        font: normal normal normal 18px/22px Varela Round;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    p {
+
+        direction: rtl;
+        text-align: center;
+        font: normal normal normal 16px/20px Varela Round;
+        letter-spacing: 0px;
+        color: #F9F9F9;
+
+    }
+
+    form {
+        flex-direction: column;
+        /* מסדר את השדות אחד מעל השני */
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 25px;
+        width: auto;
+        direction: rtl;
+        text-align: center;
+        margin-top: 25px;
+
+    }
+
+    .form-fields {
+        display: flex;
+        flex-direction: column-reverse;
+        width: auto;
+        gap: 15px;
+
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        width: auto;
+
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        font: normal normal normal 16px/20px Varela Round;
+        background: #F6F6F624 0% 0% no-repeat padding-box;
+        border: 2px solid #FFFFFF;
+        /* מבטיח שה-padding לא יוסיף לגובה */
+        color: white;
+        text-align: right;
+        box-sizing: border-box;
+        /* הרחבת השדה */
+
+    }
+
+    button {
+        padding: 13px 151px;
+        /* מתאים את ה-padding לכפתור */
+        background-color: white;
+        color: #000000;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 29px;
+        font: normal normal normal 12px/13px Varela Round;
+        color: #2823FD;
+
+    }
+
+    button:hover {
+        background-color: #2DFF8C;
+        color: white;
+    }
+
+    label {
+        font-size: 15px;
+        text-align: right;
+        color: #F9F9F9;
+        margin-bottom: 5px;
+    }
+}
