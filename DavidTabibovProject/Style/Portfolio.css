@@ -243,7 +243,7 @@ body {
 
     /* תפריט הצד (Mobile) */
     .side-menu {
-        height: 37%;
+        height: 45%;
         width: 0;
         position: fixed;
     }
@@ -267,7 +267,7 @@ body {
 
     .side-menu ul li a {
         display: block;
-        padding: 10px 20px;
+        padding: 25px 20px;
         text-decoration: none;
         color: #ffffff;
         font-size: 1.2rem;
@@ -737,7 +737,7 @@ body {
         /* שומר על מיקום הכפתור בתחתית */
         flex: 1 1 calc(45% - 20px);
         /* מתאים לשתי קופסאות בשורה במסך בינוני */
-        background-color: #f9f9f9;
+        background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 238, 255, 0.3);
         padding: 15px;
@@ -789,8 +789,17 @@ body {
         flex: 1 1 calc(100% - 20px);
         /* קופסה אחת בשורה במסך קטן */
         margin-bottom: 15px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 238, 255, 0.3);
+        padding: 15px;
+        transition: transform 0.8s ease, box-shadow 0.8s ease-in-out;
+        min-height: 550px;
+        /* גובה מינימלי אחיד לכל הקופסאות */
+        box-sizing: border-box;
+        overflow: hidden;
+        /* מבטיח שהתוכן יישאר בתוך הקופסה */
     }
-
 
     .container-img {
         width: auto;
@@ -813,14 +822,13 @@ body {
     /* תיאור ותוכן */
     .project-box p {
         max-width: 100%;
+        min-height: 20%;
+        font-size: 0.8rem;
         word-wrap: break-word;
         /* מבטיח שהטקסט לא יחרוג מגבולות הקופסה */
 
     }
 
-    .project-icons {
-        margin-bottom: 25px;
-    }
 
 
     .project-box a {
@@ -828,6 +836,83 @@ body {
     }
 }
 
+@media (max-width: 390px) {
+    .project-box {
+        width: 100%;
+    }
+
+    /* רשת הפרויקטים */
+    .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+
+        text-align: center;
+        direction: rtl;
+
+    }
+
+    .project-box h3 {
+        font-family: 'Rubik Dirt';
+        min-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        /* שינוי לגודל טקסט קטן יותר כדי להתאים למסכים קטנים */
+        color: #333;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .container-img {
+        width: 100%;
+        /* התאמת הרוחב לגודל המסך */
+        height: auto;
+        /* גובה אוטומטי כדי להתאים לתמונה */
+        overflow: hidden;
+        transform: none;
+        /* מניעת שינוי מימדים על מסכים קטנים */
+        border-radius: 10px;
+        /* פינות מעוגלות עבור התמונה */
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    /* תיאור ותוכן */
+    .project-box p {
+        max-width: 100%;
+        min-height: auto;
+        word-wrap: break-word;
+        font-size: 0.1rem;
+        /* גודל טקסט קטן יותר */
+        text-align: justify;
+        /* יישור טקסט לכל המסך */
+        padding: 0 10px;
+        /* ריווח פנימי */
+    }
+
+    .project-icons {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        /* גודל אייקונים מותאם */
+    }
+
+    .project-box a {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        /* גודל טקסט מותאם */
+        padding: 8px 15px;
+        /* ריווח פנימי לכפתורים */
+        border-radius: 5px;
+        /* פינות מעוגלות לכפתורים */
+    }
+
+    .project-box h3 {
+        font-size: 1.2rem;
+    }
+}
 
 /*---------------------------------------------- אזור צור קשר */
 .contact-section {
