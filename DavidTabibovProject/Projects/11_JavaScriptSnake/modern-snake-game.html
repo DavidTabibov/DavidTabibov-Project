@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake 2025</title>
+    <link rel="stylesheet" href="./style/modern-snake-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="game-container">
+            <div class="game-header">
+                <div class="title-container">
+                    <h1 class="cyber-title">SNAKE 2025</h1>
+                    <div class="cyber-subtitle">NEON EDITION</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-label">SCORE</div>
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-glow"></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">HIGH SCORE</div>
+                        <div class="stat-value" id="highScore">0</div>
+                        <div class="stat-glow"></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">LEVEL</div>
+                        <div class="stat-value" id="level">1</div>
+                        <div class="stat-glow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <div class="canvas-border">
+                    <canvas id="gameCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="startButton" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    <span class="cyber-button__tag">START</span>
+                </button>
+
+                <div class="mobile-controls">
+                    <button id="upButton" class="control-button">
+                        <span class="button-glow"></span>
+                        ↑
+                    </button>
+                    <div class="horizontal-controls">
+                        <button id="leftButton" class="control-button">
+                            <span class="button-glow"></span>
+                            ←
+                        </button>
+                        <button id="rightButton" class="control-button">
+                            <span class="button-glow"></span>
+                            →
+                        </button>
+                    </div>
+                    <button id="downButton" class="control-button">
+                        <span class="button-glow"></span>
+                        ↓
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="scoreContainer">
+            <span>Score: <span id="score">0</span></span>
+            <span>Level: <span id="level">1</span></span>
+            <span>High Score: <span id="highScore">0</span></span>
+        </div>
+        <div class="game-over-modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2 class="glitch-text" data-text="GAME OVER">GAME OVER</h2>
+                <div class="final-stats">
+                    <div class="final-score">
+                        <span>FINAL SCORE</span>
+                        <span id="finalScore">0</span>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement" id="newHighScore">NEW HIGH SCORE!</div>
+                        <div class="achievement" id="levelReached">LEVEL REACHED: <span>0</span></div>
+                    </div>
+                </div>
+                <button id="restartButton" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    <span class="cyber-button__tag">RETRY</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./script/snake-game-logic.js" defer></script>
+</body>
+
+</html>

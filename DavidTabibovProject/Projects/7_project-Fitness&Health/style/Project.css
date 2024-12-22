@@ -168,7 +168,7 @@ button:hover {
     object-fit: cover;
 }
 
-/* עיצוב רספונסיבי */
+/* התאמות רספונסיביות לגרסת מובייל */
 @media only screen and (max-width: 768px) {
 
     /* שכבת כהות מעל הרקע */
@@ -177,41 +177,99 @@ button:hover {
         position: absolute;
         top: 0;
         left: 0;
-        right: -125px;
+        right: 0;
         bottom: 0;
         background-color: rgba(98, 164, 175, 0.5);
         z-index: 1;
-        width: 300px;
-        height: auto;
     }
 
+    /* שינוי גודל כותרת ראשית עם מרווחים */
     h1 {
-        font-size: 32px;
+        font-size: 35px;
+        padding: 20px 0;
+        /* מרווח מלמעלה ומלמטה */
+        line-height: 1.4;
+        /* גובה שורה מוגדל */
+        margin-bottom: 30px;
+        /* מרווח גדול יותר מתחת לכותרת */
     }
 
+    /* שינוי גודל כותרת משנית עם מרווחים */
     h2 {
-        font-size: 18px;
+        font-size: 20px;
+        padding: 15px 0;
+        /* מרווח מלמעלה ומלמטה */
+        line-height: 1.4;
+        margin-bottom: 25px;
+        /* מרווח גדול יותר מתחת לכותרת */
     }
 
+    /* התאמת הקונטיינר לגרסת המובייל */
     .container {
-        padding: 25px;
-        max-width: auto;
-        width: auto;
+        padding: 40px 25px;
+        /* מרווח גדול יותר מלמעלה ומלמטה */
+        width: 90%;
+        max-width: 90%;
         height: auto;
-        position: absolute;
+        position: relative;
+        margin: 30px auto;
+        /* מרווח גדול יותר מסביב */
     }
 
+    /* תמונה מותאמת אישית */
     .personal-image {
         width: 150px;
+        /* גודל מוגדל */
+        height: auto;
+        margin: 30px auto;
+        /* מרווח גדול יותר מסביב */
     }
 
     .personal-image>img {
-        width: 50px;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 20px 0;
+        /* מרווח נוסף מסביב לתמונה */
     }
 
+    /* התאמת כפתור בגרסת מובייל */
     button {
         font-size: 16px;
-        padding: 12px;
+        padding: 15px 25px;
+        /* מרווח גדול יותר בכפתור */
+        width: 100%;
+        margin: 30px 0;
+        /* מרווח גדול יותר מסביב */
+    }
+
+    /* התאמת פסקאות */
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+        /* גובה שורה מוגדל */
+        margin-bottom: 30px;
+        /* מרווח גדול יותר בין פסקאות */
+        padding: 10px 0;
+        /* מרווח נוסף מלמעלה ומלמטה */
+    }
+
+    /* הוספת מרווחים בין אלמנטים */
+    *+* {
+        margin-top: 0x;
+        /* מרווח אוטומטי בין כל האלמנטים */
+    }
+
+    /* מרווחים נוספים לקבוצות תוכן */
+    section {
+        padding: 50px 0;
+        /* מרווח גדול יותר בין סקשנים */
+    }
+
+    /* מרווח בין אלמנטים בתוך מיכל */
+    .container>* {
+        margin-bottom: 0px;
+        /* מרווח תחתון בין אלמנטים */
     }
 }

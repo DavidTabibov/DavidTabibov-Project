@@ -1,0 +1,298 @@
+:root {
+    --primary-neon: #0ff;
+    --secondary-neon: #f0f;
+    --background-dark: #000;
+    --text-glow: 0 0 10px var(--primary-neon);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    background: var(--background-dark);
+    color: #fff;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Background Animation */
+.game-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+}
+
+.stars,
+.twinkling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000 url('../images/stars.jpeg') repeat top center;
+    /* שינוי לנתיב לתמונה חיצונית */
+}
+
+.twinkling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('../images/twinkling.jpg') repeat top center;
+    /* שינוי לנתיב לתמונה חיצונית */
+    animation: move-twinkle-back 200s linear infinite;
+}
+
+@keyframes move-twinkle-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+.game-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* סגנון לפופ-אפ של הפסילה */
+.game-over-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border: 2px solid var(--primary-neon);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 30px var(--primary-neon);
+}
+
+.glitch-text {
+    font-size: 2.5em;
+    color: var(--primary-neon);
+    text-shadow: var(--text-glow);
+    animation: glitch 1s linear infinite;
+}
+
+.score-text {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 1rem 0;
+}
+
+#restartButton {
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+    color: var(--primary-neon);
+    background: transparent;
+    border: 2px solid var(--primary-neon);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+#restartButton:hover {
+    background: var(--primary-neon);
+    color: var(--background-dark);
+}
+
+.cyber-title {
+    font-size: 4vw;
+    text-align: center;
+    color: var(--primary-neon);
+    text-shadow: 0 0 5px var(--primary-neon), 0 0 10px var(--primary-neon);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.cyber-subtitle {
+    font-size: 2vw;
+    color: var(--secondary-neon);
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px var(--secondary-neon);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.stat-box {
+    width: 100%;
+    max-width: 300px;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 1rem;
+    border: 1px solid var(--primary-neon);
+    border-radius: 5px;
+}
+
+.canvas-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.canvas-border {
+    width: 100%;
+    border: 2px solid var(--primary-neon);
+    border-radius: 10px;
+    padding: 5px;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background: var(--background-dark);
+    border-radius: 5px;
+}
+
+.cyber-button {
+    padding: 1vw 2vw;
+    font-size: 1.5vw;
+    color: var(--primary-neon);
+    background: transparent;
+    border: 2px solid var(--primary-neon);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+.cyber-button:hover {
+    background: var(--primary-neon);
+    color: var(--background-dark);
+    box-shadow: 0 0 20px var(--primary-neon);
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .cyber-title {
+        font-size: 6vw;
+    }
+
+    .cyber-subtitle {
+        font-size: 4vw;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-box {
+        max-width: 100%;
+    }
+
+    .canvas-container {
+        max-width: 90%;
+    }
+
+    .cyber-button {
+        font-size: 3vw;
+        padding: 2vw 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyber-title {
+        font-size: 8vw;
+    }
+
+    .cyber-subtitle {
+        font-size: 5vw;
+    }
+
+    .cyber-button {
+        font-size: 4vw;
+        padding: 3vw 5vw;
+    }
+
+    .control-button {
+        width: 40px;
+        height: 40px;
+        font-size: 3vw;
+    }
+}
+
+/* תיקון למסכים גדולים */
+@media (min-width: 1024px) {
+    .game-container {
+        width: 80%;
+        max-width: 1400px;
+        padding: 3rem;
+    }
+
+    .cyber-title {
+        font-size: 3em;
+    }
+
+    .cyber-subtitle {
+        font-size: 1.5em;
+    }
+
+    .canvas-container {
+        width: 40%;
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    .canvas-border {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .cyber-button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+    }
+
+    .stats-container {
+        gap: 3rem;
+    }
+
+    .stat-box {
+        width: 250px;
+        max-width: 300px;
+    }
+}

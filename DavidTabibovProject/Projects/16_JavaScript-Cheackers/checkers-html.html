@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק דמקה</title>
+    <link rel="stylesheet" href="style/checkers-css.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>משחק דמקה</h1>
+            <div class="game-info">
+                <div class="player-turn">תור שחקן: <span id="current-player">אדום</span></div>
+                <div class="score">
+                    <div class="red-score">אדום: <span id="red-score">12</span></div>
+                    <div class="black-score">שחור: <span id="black-score">12</span></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-board-container">
+            <div id="game-board" class="game-board"></div>
+        </main>
+
+        <div class="game-controls">
+            <button id="new-game" class="btn">משחק חדש</button>
+            <button id="undo-move" class="btn">בטל מהלך</button>
+        </div>
+
+        <div id="mobile-message" class="mobile-message">
+            סובב את המכשיר למצב לוחב לחוויית משחק טובה יותר
+        </div>
+    </div>
+
+    <script src="script/checkers-js.js"></script>
+</body>
+
+</html>

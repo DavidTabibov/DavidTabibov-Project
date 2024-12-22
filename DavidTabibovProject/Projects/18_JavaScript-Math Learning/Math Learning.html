@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Learning App</title>
+    <link href="./style/Math Learning.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Math Learning App</h1>
+
+        <div class="question">
+            <span id="num1"></span> + <span id="num2"></span> = ?
+        </div>
+
+        <form id="mathForm">
+            <div class="mb-3">
+                <label for="answer" class="form-label">Your Answer:</label>
+                <input type="number" class="form-control" id="answer" placeholder="Enter your answer" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Check Answer</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="./script/Math Learning.js"></script>
+</body>
+
+</html>

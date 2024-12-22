@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* הגדרת כיוון כללי */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  text-align: right;
+  /* יישור טקסט לימין */
+}
+
+/* תפריט ניווט במצב רגיל (Desktop) */
+.navbar {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.63);
+  padding: 4px;
+
+  max-height: 100px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 2;
+  text-align: center;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0, 220, 244, 0.645);
+}
+
+/* עיצוב הלוגו והשם */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 45px;
+  height: 40px;
+  border-radius: 100%;
+  margin-left: 16em;
+  box-shadow: 2px 2px rgba(0, 220, 244, 0.645);
+}
+
+
+.logo-container span {
+  font-size: 1rem;
+  color: #000;
+  margin-left: 0.5em;
+  font-family: serif;
+}
+
+.logo-container span:hover {
+  color: rgba(0, 220, 244, 0.645);
+  box-shadow: 1px 1px rgba(0, 220, 244, 0.645);
+  cursor: pointer;
+}
+
+
+/* התאמות למסכים קטנים */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    color: lightskyblue;
+  }
+
+  .iconcontainer {
+    gap: 15px;
+    /* הקטנת הרווח בין הלוגואים במסכים קטנים */
+    padding: 0 10px;
+  }
+
+  .logo-box {
+    width: 50px;
+    /* התאמת גודל הקופסא של הלוגו כדי שיתאים למסכים קטנים */
+    height: 50px;
+  }
+
+  .logo-description {
+    font-size: 0.5rem;
+    padding: 1px 2px;
+    margin-bottom: 19px;
+  }
+}
+
+/* ביטול סימון תיבת הסימון ב-Desktop */
+@media (min-width: 700px) {
+  .menu-toggle:checked~.side-menu {
+    width: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/*-------------------------------------------------------------------------- עיצוב החלק העליון של תיק העבודות */
+.portfolio-header {
+  background-color: #91ffed;
+  padding: 110px;
+  text-align: center;
+  background-image: url('../images/myimage2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.portfolio-header h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin-top: 25px;
+  background-color: rgba(0, 0, 0, 0.221);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.portfolio-header p {
+  font-size: 1.5em;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: arial;
+  background-color: rgba(0, 0, 0, 0.262);
+  padding: 10px;
+  border-radius: 2px;
+  direction: rtl;
+}
+
+@media (max-width: 768px) {
+  .portfolio-header {
+    padding: 40px;
+  }
+}
+
+/* כפתור הורדה וצפייה------------------------------------ */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  /* ממרכז את הכפתורים */
+  gap: 10px;
+  /* מרווח בין הכפתורים */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-project button,
+.download-project button {
+  width: 153px;
+  height: 32px;
+  font: normal normal medium 16px/26px Heebo;
+  background: #ffffffda 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.download-project button::before,
+.view-project button::before {
+  content: "\00AB";
+  margin-right: 3px;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+
+
+button:hover {
+  background: #1ae1ec 0% 0% no-repeat padding-box;
+  /* ירוק כהה יותר בהובר */
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
+.view-project button:hover {
+  background: #1ae1ec 0% 0% no-repeat padding-box;
+  /* כחול כהה יותר בהובר */
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/*------------------------------------------------------------------------------- עיצוב אזור לוגואים (Skills) */
+.skills {
+  height: 85px;
+  background-color: #fff;
+  padding: 0 auto;
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 238, 255, 0.2);
+  margin: auto;
+  margin-bottom: 100px;
+  margin-top: 3px;
+}
+
+.iconcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* שמירה על רווח אחיד בין הלוגואים */
+  margin: 0 auto;
+  flex-wrap: wrap;
+  /* הלוגואים יישארו באותה שורה עד גודל מסך מסוים ואז ייעברו לשורה נוספת */
+  padding: 0 15px;
+  /* מרווח פנימי כדי למנוע מהלוגואים לגעת בקצוות המסך */
+}
+
+.logo-box {
+  position: relative;
+  width: 85px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-box:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(0, 238, 255, 0.5);
+}
+
+.skills img {
+  max-height: 75px;
+  max-width: 75px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+.logo-description {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.logo-box:hover .logo-description {
+  opacity: 1;
+}
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* רווח מהסקשן למעלה */
+  margin-bottom: 165px;
+
+}
+
+/*  project image*/
+img {
+  max-height: 80vh;
+  max-width: 100vw;
+
+}
+
+/* ------------------------------------footer אזור */
+
+.footer {
+  background-color: #19cbcb93;
+  padding: 5px;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  /* להבטיח שכל התוכן נמצא במרכז */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  /* פיצול שם בצד שמאל והזכויות בצד ימין */
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.footer .name a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer .name a:hover {
+  text-decoration: none;
+  /* הוספת קו תחתי בקישור בעת ריחוף */
+  color: #00eeff;
+}
+
+.footer .rights {
+  text-align: right;
+}
+
+.social-icons {
+  margin-top: 10px;
+  /* מרווח קטן בין זכויות היוצרים לאייקונים */
+}
+
+.social-icons a {
+  margin: 0 10px;
+  /* רווח בין האייקונים */
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+  /* שינוי צבע האייקונים ללבן על רקע כהה */
+}
+
+.social-icons a:hover img {
+  filter: none;
+  /* הסרת הפילטר על hover */
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק טריוויה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/trivia-game-styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- מסך פתיחה -->
+        <div id="welcome-screen" class="screen active">
+            <h1 class="game-title">טריוויה ישראלית</h1>
+            <div class="game-settings">
+                <div class="category-selection">
+                    <h2>בחר קטגוריה</h2>
+                    <div class="categories">
+                        <button class="category-btn" data-category="general">
+                            <span class="icon">🎯</span>
+                            <span>ידע כללי</span>
+                        </button>
+                        <button class="category-btn" data-category="history">
+                            <span class="icon">📚</span>
+                            <span>היסטוריה</span>
+                        </button>
+                        <button class="category-btn" data-category="geography">
+                            <span class="icon">🌍</span>
+                            <span>גיאוגרפיה</span>
+                        </button>
+                        <button class="category-btn" data-category="science">
+                            <span class="icon">🔬</span>
+                            <span>מדע</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="difficulty-selection">
+                    <h2>בחר רמת קושי</h2>
+                    <div class="difficulty-levels">
+                        <button class="difficulty-btn" data-difficulty="easy">
+                            <span class="icon">😊</span>
+                            <span>קל</span>
+                        </button>
+                        <button class="difficulty-btn" data-difficulty="medium">
+                            <span class="icon">🤔</span>
+                            <span>בינוני</span>
+                        </button>
+                        <button class="difficulty-btn" data-difficulty="hard">
+                            <span class="icon">🤯</span>
+                            <span>קשה</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="startBtn" class="start-btn">
+                    <span class="icon">🎮</span>
+                    <span>התחל משחק</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- מסך המשחק -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="game-info">
+                    <div class="stat">
+                        <span class="label">שאלה</span>
+                        <span id="questionNumber">1/10</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">ניקוד</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">זמן</span>
+                        <div class="timer">
+                            <div id="timerBar" class="timer-bar"></div>
+                            <span id="timerValue">30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="category-badge" id="currentCategory">
+                    <span class="icon">🎯</span>
+                    <span>ידע כללי</span>
+                </div>
+                <h2 id="question" class="question-text">שאלה תופיע כאן</h2>
+                <div id="answers" class="answers-grid">
+                    <!-- תשובות יתווספו דינמית -->
+                </div>
+            </div>
+        </div>
+
+        <!-- מסך סיכום -->
+        <div id="summary-screen" class="screen">
+            <div class="summary-content">
+                <h2>סיכום המשחק</h2>
+                <div class="final-score">
+                    <div class="score-circle">
+                        <span id="finalScore">0</span>
+                        <span class="label">נקודות</span>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="icon">✅</span>
+                        <span class="label">תשובות נכונות</span>
+                        <span id="correctAnswers">0/10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">⏱️</span>
+                        <span class="label">זמן ממוצע לשאלה</span>
+                        <span id="avgTime">0s</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">🎯</span>
+                        <span class="label">דיוק</span>
+                        <span id="accuracy">0%</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="playAgainBtn" class="action-btn">
+                        <span class="icon">🔄</span>
+                        <span>שחק שוב</span>
+                    </button>
+                    <button id="homeBtn" class="action-btn secondary">
+                        <span class="icon">🏠</span>
+                        <span>חזור לתפריט</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/trivia-game-logic.js" defer></script>
+</body>
+
+</html>

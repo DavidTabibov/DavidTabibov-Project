@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מזג אוויר | Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/weather-app-styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>תחזית מזג האוויר</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="הקלד שם עיר..." autocomplete="off">
+                <button id="searchButton" class="search-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="weather-container">
+                <!-- כרטיס מזג אוויר נוכחי -->
+                <div id="currentWeather" class="weather-card main">
+                    <div class="weather-header">
+                        <h2 id="cityName">הזן עיר...</h2>
+                        <p id="date"></p>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-icon-container">
+                            <img id="weatherIcon" src="" alt="מזג אוויר" class="weather-icon">
+                        </div>
+                        <div class="temperature-container">
+                            <span id="temperature">--</span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <p id="description" class="weather-description">--</p>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail humidity">
+                            <span class="label">לחות</span>
+                            <span id="humidity" class="value">--%</span>
+                        </div>
+                        <div class="detail wind">
+                            <span class="label">רוח</span>
+                            <span id="wind" class="value">-- קמ"ש</span>
+                        </div>
+                        <div class="detail feels-like">
+                            <span class="label">תחושת חום</span>
+                            <span id="feelsLike" class="value">--°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- תחזית לחמישה ימים -->
+                <div class="forecast-section">
+                    <h3>תחזית 5 ימים הקרובים</h3>
+                    <div id="forecast" class="forecast-container">
+                        <!-- תחזית תתווסף דינמית דרך JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- לוודר -->
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- הודעות שגיאה -->
+        <div id="error" class="error-message" role="alert">
+            <!-- הודעות שגיאה יופיעו כאן -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script/weather-app-logic.js" defer></script>
+</body>
+
+</html>

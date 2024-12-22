@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="./style/TaskManger.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>Task Manager</h3>
+            </div>
+            <div class="card-body">
+                <form id="taskForm">
+                    <div class="mb-3">
+                        <label for="taskName" class="form-label">Task Name</label>
+                        <input type="text" class="form-control" id="taskName" placeholder="Enter task name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskDetails" class="form-label">Task Details</label>
+                        <textarea class="form-control" id="taskDetails" rows="3"
+                            placeholder="Enter task details"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskPriority" class="form-label">Task Priority</label>
+                        <select class="form-select" id="taskPriority">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Add Task</button>
+                </form>
+
+                <hr>
+
+                <h5 class="text-center">Task List</h5>
+                <div id="taskList" class="list-group">
+                    <!-- Tasks will be dynamically appended here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script/Script.js"></script>
+</body>
+
+</html>
